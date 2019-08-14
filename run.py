@@ -45,7 +45,6 @@ def about_actor(actor_name):
     return render_template("about_actor.html", bg_img="/static/img/home-bg.jpg" , title = banner_title, sub_title="", content = single_actor)
 
 
-
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
