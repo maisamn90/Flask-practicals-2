@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    {% if content["message"] %}
+    <h2>{{content["message"]}}</h2>
+    {% else %}
+    <div class="row">
+     <div class="col-md-7">
+       <h2>{{content["name"]}}</h2>
+       <p>{{content["description"]}}</p>
+     </div>
+     <div class="col-md-5">
+       <img class="img-fluid" src="{{content["image_source"]}}"></img>
+     </div>
+   </div>
+   {% endif %}
+</div>
+{% endblock %}

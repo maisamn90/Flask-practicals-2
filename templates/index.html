@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  {% for actor in content_list %}
+  {% if loop.index % 2 != 0 %}
+   <div class="row">
+     <div class="col-md-7">
+       <h2><a href="about/{{actor['url']}}">{{actor["name"]}}</a></h2>
+       <p>{{actor["description"]}}</p>
+     </div>
+     <div class="col-md-5">
+       <img class="img-fluid" src="{{actor["image_source"]}}"></img>
+     </div>
+   </div>
+   <hr>
+   {% else %}
+   <div class="row">
+     <div class="col-md-5">
+       <img class="img-fluid" src="{{actor["image_source"]}}"></img>
+     </div>
+     <div class="col-md-7">
+       <h2><a href="about/{{actor['url']}}">{{actor["name"]}}</a></h2>
+       <p>{{actor["description"]}}</p>
+     </div>
+   </div>
+   <hr>
+   {% endif %}
+   {% endfor %}
+</div>
+{% endblock %}
